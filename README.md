@@ -15,6 +15,18 @@ print(df.head())
 
 Sample data for supported drivers lives under [data](data).
 
+## Installation from GitHub
+
+Install the latest version directly from GitHub:
+
+```bash
+git clone https://github.com/wccarleton/scandrivers.git
+cd scandrivers
+pip install -e .
+```
+
+If you are using a conda environment, activate it first and then run the install command above.
+
 ## Features
 
 - Register device-specific loaders as drivers
