@@ -1,0 +1,22 @@
+device: kt20
+name: KT20 magnetic susceptibility scanner
+status: supported
+summary: Loads KT20 scan exports into a tidy pandas DataFrame.
+source_directory: ../../data/kt20/kt20_0467
+expected_files:
+  - record_scanner_10khz_*.csv
+  - kappa_sigma_0467.csv
+required_columns:
+  - record_id
+  - date
+  - time
+  - frequency
+  - pin
+  - diameter_correction
+produced_columns:
+  - measurement_index
+  - susceptibility_10_3si
+  - trigger_data
+notes:
+  - The driver expects the scan CSV header with metadata on the first row and measurement values on subsequent rows.
+  - The sample data lives under data/kt20/kt20_0467.

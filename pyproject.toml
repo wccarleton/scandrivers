@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scandrivers"
+version = "0.1.0"
+description = "Pluggable device drivers for loading structured lab instrument data into pandas DataFrames."
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{ name = "MagSus Contributors" }]
+dependencies = ["pandas>=2.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

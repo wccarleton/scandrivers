@@ -1,0 +1,18 @@
+Record_ID,Date,Time,Frequency,Pin,Diameter corr.
+243,14.03.2026,12:55:8,10kHz,No,None 
+
+,Susceptibility[10-3SI],,Trigger data
+1,0.5780,,0
+2,0.5871,,0
+3,0.9607,,0
+4,1.0143,,0
+5,0.7478,,0
+6,1.4354,,0
+7,1.7087,,0
+8,2.2093,,0
+9,1.0689,,0
+10,0.1346,,0
+
+,Min,Max,Avg
+Kappa[10-3SI],0.134621,2.20926,1.04447,
+Sigma[Ohm.m],0,0,0,
