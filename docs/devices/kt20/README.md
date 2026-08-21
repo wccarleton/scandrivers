@@ -9,7 +9,6 @@ The KT20 driver loads magnetic susceptibility scan exports produced by the KT20 
 The driver expects scan files matching patterns such as:
 
 - record_scanner_10khz_*.csv
-- kappa_sigma_0467.csv
 
 ## Expected input structure
 
@@ -48,4 +47,6 @@ The main measurement columns produced by the loader are:
 
 Example sample data for testing lives in:
 
-- data/kt20/kt20_0467
+- src/scandrivers/demo_data/kt20/kt20_0467
+
+The published [KT20 device page](../../../devices/kt20.qmd) is the maintained user-facing reference.

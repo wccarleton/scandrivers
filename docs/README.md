@@ -1,6 +1,7 @@
 # Documentation
 
-This folder collects device-specific documentation and manifests for supported drivers.
+The published documentation is built with Quarto from the repository root. It covers installation, supported devices, expected formats, and executable notebook demos.
 
-- See [devices/README.md](devices/README.md) for the device index.
-- Add a new device subfolder under [devices](devices) whenever a new driver is introduced.
+- Start with the [documentation site](../index.qmd) source.
+- See [devices/README.md](devices/README.md) for the legacy device reference index.
+- Add a new device page under `devices/` and include it in `_quarto.yml` when a driver is introduced.

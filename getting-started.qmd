@@ -1,0 +1,55 @@
+---
+title: "Getting started"
+---
+
+## Install
+
+From a checkout of the repository:
+
+```bash
+pip install -e .
+```
+
+For a published or GitHub-hosted version:
+
+```bash
+pip install git+https://github.com/wccarleton/scandrivers.git
+```
+
+## Load a file
+
+```python
+from scandrivers import load_data
+
+soil = load_data("path/to/pXRF Readings.xlsx", driver="pxrf")
+scan = load_data("path/to/record_scanner_10khz_289.csv", driver="kt20")
+```
+
+Every driver returns a pandas DataFrame. The driver handles instrument-specific parsing and normalization; analysis remains in the consuming project.
+
+## Use the included demo data
+
+The package exposes paths to its small, included demonstration datasets:
+
+```python
+from scandrivers import demo_data_path, load_data
+
+path = demo_data_path("pxrf", "Final", "pXRF Readings (Trench1to6).xlsx")
+df = load_data(path, driver="pxrf")
+```
+
+The demo data is intended for examples, tests, and notebook development. It is not a substitute for project-specific source data.
+
+## Run tests
+
+```bash
+pytest tests/ -v
+```
+
+## Add a driver
+
+1. Add a driver module under `src/scandrivers/drivers/`.
+2. Inherit from `DeviceDriver` and implement `load()`.
+3. Register the driver in `src/scandrivers/__init__.py`.
+4. Add focused tests and a small representative demo fixture when appropriate.
+5. Add a device page under `devices/`.

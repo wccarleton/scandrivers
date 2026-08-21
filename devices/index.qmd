@@ -1,0 +1,12 @@
+---
+title: "Supported devices"
+---
+
+Each driver captures the formats and conventions of a particular instrument or lab workflow.
+
+| Driver | Instrument | Expected input | Output |
+|---|---|---|---|
+| `kt20` | KT20 magnetic susceptibility scanner | Scan CSV exports | Tidy measurement DataFrame |
+| `pxrf` | Niton portable XRF | Excel exports; native `.ndt` via sidecar | Normalized elemental DataFrame |
+
+See the [KT20 reference](kt20.qmd) and [pXRF reference](pxrf.qmd) for file expectations and output fields.

@@ -1,0 +1,10 @@
+---
+title: "Notebook demos"
+---
+
+The notebooks are executable examples of the package API and the conventions encoded by each driver.
+
+- [KT20 scan demo](kt20_scan_demo.ipynb): load individual scans, inspect measurements, and aggregate scan directories.
+- [pXRF scan demo](pxrf_scan_demo.ipynb): load an export, preserve `<LOD` values, parse archaeological sample codes, and compare elemental composition by depth.
+
+The notebooks use only the packaged demo data and are intended to be a starting point for separate analysis projects.

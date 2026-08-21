@@ -1,0 +1,59 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - index.qmd
+    - getting-started.qmd
+    - devices/index.qmd
+    - devices/kt20.qmd
+    - devices/pxrf.qmd
+    - notebooks/index.qmd
+    - notebooks/kt20_scan_demo.ipynb
+    - notebooks/pxrf_scan_demo.ipynb
+
+execute:
+  freeze: true
+
+website:
+  title: "scandrivers"
+  description: "MPIGEA instrument drivers for reproducible lab data workflows"
+  repo-url: https://github.com/wccarleton/scandrivers
+  repo-actions: [edit, issue]
+  navbar:
+    left:
+      - text: "Get started"
+        href: getting-started.qmd
+      - text: "Devices"
+        href: devices/index.qmd
+      - text: "Notebooks"
+        href: notebooks/index.qmd
+    right:
+      - icon: github
+        href: https://github.com/wccarleton/scandrivers
+        aria-label: GitHub
+  sidebar:
+    style: docked
+    contents:
+      - section: "Overview"
+        contents:
+          - index.qmd
+          - getting-started.qmd
+      - section: "Supported devices"
+        contents:
+          - devices/index.qmd
+          - devices/kt20.qmd
+          - devices/pxrf.qmd
+      - section: "Notebook demos"
+        contents:
+          - notebooks/index.qmd
+          - text: "KT20 scan demo"
+            href: notebooks/kt20_scan_demo.ipynb
+          - text: "pXRF scan demo"
+            href: notebooks/pxrf_scan_demo.ipynb
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    code-copy: true
+    code-overflow: wrap

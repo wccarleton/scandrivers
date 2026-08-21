@@ -1,0 +1,28 @@
+---
+title: "scandrivers"
+subtitle: "Instrument-aware data loading for MPIGEA lab workflows"
+---
+
+`scandrivers` is a standalone Python package for loading structured exports from laboratory instruments into tidy pandas DataFrames.
+
+It is developed for the Max Planck Institute for Geoanthropology (MPIGEA), where instrument drivers need to reflect local tools, data protocols, reporting standards, and geoarchaeological use cases.
+
+## What it provides
+
+- A common `load_data()` API across instrument formats.
+- Device-specific drivers that normalize headers, metadata, and data types.
+- Deliberate handling of instrument values such as pXRF `<LOD` results.
+- Small, versioned demo datasets for reproducible examples and tests.
+
+## Current drivers
+
+| Device | Primary use | Formats |
+|---|---|---|
+| KT20 | Magnetic susceptibility scans | CSV scan exports |
+| pXRF | Geoarchaeological elemental analysis | `.xlsx`, `.xls`, and `.ndt` with an Excel sidecar |
+
+Start with [Getting started](getting-started.qmd), browse [supported devices](devices/index.qmd), or open the [notebook demos](notebooks/index.qmd).
+
+## Project scope
+
+This package contains reusable instrument drivers and small demonstration datasets. Analysis projects should depend on `scandrivers` rather than placing project-specific analysis code here.

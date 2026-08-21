@@ -1,0 +1,42 @@
+---
+title: "pXRF"
+---
+
+## Purpose
+
+The pXRF driver loads Niton XL3t portable XRF exports for elemental analysis of geological and archaeological materials.
+
+## Expected formats
+
+- `.xlsx`: modern Excel export, read with `openpyxl`.
+- `.xls`: legacy Excel export, read with `xlrd`.
+- `.ndt`: native Niton database file. Because the binary format is proprietary, the driver resolves a same-name `.xlsx` or `.xls` sidecar in the same directory.
+
+For example, `sample.ndt` must be accompanied by `sample.xlsx` or `sample.xls`.
+
+## Normalization and typing
+
+Headers are normalized to snake case, for example:
+
+- `Reading No` becomes `reading_no`.
+- `Mo CPS/ua` becomes `mo_cps_ua`.
+- `Zr Error` becomes `zr_error`.
+
+The driver types reading numbers, timestamps, durations, error fields, and CPS fields where possible. Element concentrations preserve `<LOD` markers so non-detection information is not silently discarded.
+
+## Domain conventions
+
+The demo export contains soil measurements in `ppm` and mining measurements in `%`. These units remain explicit in the `units` column and should not be compared directly.
+
+The sample codes in the demo, such as `KKT1-0CM`, encode site, trench, and depth context. The notebook demonstrates parsing those fields for stratigraphic analysis.
+
+## Example
+
+```python
+from scandrivers import demo_data_path, load_data
+
+path = demo_data_path("pxrf", "Final", "pXRF Readings (Trench1to6).xlsx")
+df = load_data(path, driver="pxrf")
+```
+
+See the [pXRF notebook demo](../notebooks/pxrf_scan_demo.ipynb) for loading, metadata parsing, LOD inspection, and depth visualization.

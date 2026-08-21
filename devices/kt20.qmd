@@ -1,0 +1,44 @@
+---
+title: "KT20"
+---
+
+## Purpose
+
+The KT20 driver loads magnetic susceptibility scan exports into a tidy pandas DataFrame.
+
+## Expected format
+
+The driver accepts either a scan directory or an individual CSV export:
+
+- `record_scanner_10khz_*.csv`
+- A directory containing multiple numbered scan folders
+
+The scan CSV contains instrument metadata followed by susceptibility measurements and summary values.
+
+## Output fields
+
+Metadata fields are normalized to:
+
+- `record_id`
+- `date`
+- `time`
+- `frequency`
+- `pin`
+- `diameter_correction`
+
+Measurement fields include:
+
+- `measurement_index`
+- `susceptibility_10_3si`
+- `trigger_data`
+
+## Example
+
+```python
+from scandrivers import demo_data_path, load_data
+
+path = demo_data_path("kt20", "kt20_0467", "289", "record_scanner_10khz_289.csv")
+df = load_data(path, driver="kt20")
+```
+
+The [KT20 notebook demo](../notebooks/kt20_scan_demo.ipynb) shows single-file loading and directory aggregation.
