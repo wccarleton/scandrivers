@@ -9,7 +9,7 @@ description = "Pluggable device drivers for loading structured lab instrument da
 readme = "README.md"
 requires-python = ">=3.9"
 authors = [{ name = "MagSus Contributors" }]
-dependencies = ["pandas>=2.0"]
+dependencies = ["pandas>=2.0", "openpyxl>=3.0", "xlrd>=2.0"]
 
 [project.optional-dependencies]
 dev = ["pytest>=7.0"]
